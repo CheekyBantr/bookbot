@@ -11,3 +11,14 @@ def letter_count(text):
         else:
             lettercount[lower_case_letter] += 1
     return lettercount
+
+def sort_on(items):
+    return items["num"]
+
+def sorted_letter_count(dictionary):
+    sorted_letters = []
+    for char, num in dictionary.items():
+        if char.isalpha():
+            sorted_letters.append({"char":char,"num":num})
+    sorted_letters.sort(reverse=True,key=sort_on)
+    return sorted_letters
